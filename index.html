@@ -3,54 +3,83 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Doppio — Padel Score Tracker</title>
-<meta name="description" content="Doppio is an offline-first padel score tracker for iPhone, iPad, and Apple Watch. No account, no ads, no tracking.">
-<meta name="theme-color" content="#0f1a24">
+<title>Doppio | Padel score tracker for iPhone, iPad and Apple Watch</title>
+<meta name="description" content="Doppio is an offline-first padel score tracker for iPhone, iPad, and Apple Watch. No account, no ads, no tracking. Everything stays on your device.">
+<meta name="theme-color" content="#16222e">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/icon-192.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta property="og:title" content="Doppio | Padel score tracker">
+<meta property="og:description" content="Score padel matches with a tap on iPhone, iPad, and Apple Watch. No account, no tracking.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://doppio.marcosanguineti.com">
+<meta property="og:image" content="https://doppio.marcosanguineti.com/assets/icon-192.png">
 <style>
-:root{--bg:#0f1a24;--ink:#eaf1f5;--muted:#9bb0bd;--lime:#b5fa17;--line:rgba(255,255,255,.10);--panel:rgba(255,255,255,.04)}
+:root{--bg:#16222e;--bg2:#0f1822;--ink:#eaf1f5;--muted:#93a5b2;--lime:#b5fa17;--line:rgba(255,255,255,.10);--panel:rgba(255,255,255,.04)}
 *{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
-body{margin:0;background:linear-gradient(180deg,#0f1a24 0%,#0b141b 100%);color:var(--ink);font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh}
+body{margin:0;background:radial-gradient(125% 80% at 50% -8%,#1d2f3f 0%,var(--bg) 46%,var(--bg2) 100%);color:var(--ink);font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh}
 a{color:var(--lime);text-decoration:none}a:hover{text-decoration:underline}
-.wrap{max-width:720px;margin:0 auto;padding:32px 22px 64px}
-header.site{display:flex;align-items:center;justify-content:space-between;padding:8px 0 28px}
-.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;color:#fff;letter-spacing:.2px}
-.brand .dot{width:10px;height:10px;border-radius:50%;background:var(--lime);box-shadow:0 0 14px rgba(181,250,23,.7)}
+.wrap{max-width:740px;margin:0 auto;padding:30px 22px 60px}
+header.site{display:flex;align-items:center;justify-content:space-between;padding:6px 0 26px}
+.brand{display:flex;align-items:center;gap:9px;font-weight:800;font-size:19px;color:#fff;letter-spacing:.2px}
+.brand img{height:24px;width:auto;display:block}
 nav.site a{color:var(--muted);font-weight:600;font-size:15px;margin-left:18px}nav.site a:hover{color:#fff;text-decoration:none}
-.hero{padding:18px 0 6px}
-h1{font-size:40px;line-height:1.12;font-weight:800;color:#fff;margin:.1em 0 .25em;letter-spacing:-.5px}
+.hero{display:flex;align-items:center;gap:26px;padding:20px 0 8px;flex-wrap:wrap}
+.appicon{width:104px;height:104px;border-radius:23px;box-shadow:0 10px 40px rgba(0,0,0,.45),0 0 0 1px var(--line);flex:0 0 auto}
+.hero-copy{flex:1 1 320px}
+.chip{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.4px;color:var(--lime);border:1px solid rgba(181,250,23,.35);border-radius:999px;padding:4px 11px;margin-bottom:14px}
+h1{font-size:38px;line-height:1.12;font-weight:800;color:#fff;margin:.05em 0 .3em;letter-spacing:-.5px}
 h1 .accent{color:var(--lime)}
-.lede{font-size:20px;color:var(--muted);margin:.3em 0 1.5em;max-width:34ch}
-.btn{display:inline-block;background:var(--lime);color:#0b141b;font-weight:800;padding:13px 22px;border-radius:999px;margin:6px 10px 6px 0}
-.btn:hover{text-decoration:none;filter:brightness(1.05)}
-.btn.ghost{background:transparent;color:#fff;border:1px solid var(--line)}
-.features{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:34px 0 8px}
+.lede{font-size:18px;color:var(--muted);margin:.2em 0 0;max-width:44ch}
+.actions{margin:26px 0 6px}
+.btn{display:inline-block;font-weight:700;padding:11px 18px;border-radius:999px;margin:6px 10px 6px 0;border:1px solid var(--line);color:#fff}
+.btn:hover{text-decoration:none;border-color:rgba(255,255,255,.3)}
+.features{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:36px 0 8px}
 .feature{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
-.feature h3{margin:0 0 4px;font-size:16px;color:#fff}
-.feature p{margin:0;color:var(--muted);font-size:15px;line-height:1.5}
-footer.site{border-top:1px solid var(--line);margin-top:48px;padding-top:22px;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.feature h3{margin:0 0 5px;font-size:16px;color:#fff}
+.feature p{margin:0;color:var(--muted);font-size:14.5px;line-height:1.55}
+footer.site{border-top:1px solid var(--line);margin-top:46px;padding-top:22px;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 footer.site a{color:var(--muted)}footer.site a:hover{color:#fff}
-@media(max-width:520px){h1{font-size:32px}.features{grid-template-columns:1fr}.wrap{padding:24px 18px 56px}}
+@media(max-width:560px){h1{font-size:31px}.features{grid-template-columns:1fr}.appicon{width:84px;height:84px;border-radius:19px}.wrap{padding:24px 18px 54px}}
 </style>
 </head>
 <body>
 <div class="wrap">
   <header class="site">
-    <div class="brand"><span class="dot"></span> Doppio</div>
-    <nav class="site"><a href="/privacy">Privacy</a><a href="/support">Support</a></nav>
+    <span class="brand"><img src="/assets/doppio-mark.png" alt="">Doppio</span>
+    <nav class="site"><a href="/support">Support</a><a href="/privacy">Privacy</a></nav>
   </header>
 
   <section class="hero">
-    <h1>Score the match.<br><span class="accent">Not the mess.</span></h1>
-    <p class="lede">An offline-first padel score tracker for iPhone, iPad, and Apple Watch.</p>
-    <a class="btn ghost" href="/support">Get support</a>
-    <a class="btn ghost" href="/privacy">Privacy policy</a>
+    <img class="appicon" src="/assets/doppio-icon.png" alt="Doppio app icon">
+    <div class="hero-copy">
+      <span class="chip">Coming soon to the App Store</span>
+      <h1>Score the match.<br><span class="accent">Not the mess.</span></h1>
+      <p class="lede">An offline-first padel score tracker for iPhone, iPad, and Apple Watch. Score with a tap, keep the board readable during play, and review every match afterwards.</p>
+      <div class="actions">
+        <a class="btn" href="/support">Support</a>
+        <a class="btn" href="/privacy">Privacy policy</a>
+      </div>
+    </div>
   </section>
 
   <section class="features">
-    <div class="feature"><h3>Fast scoring</h3><p>Two big tap zones, instant undo, and a scoreboard you can read across the court.</p></div>
-    <div class="feature"><h3>Apple Watch</h3><p>Score from your wrist, or use the Watch as a remote while your phone keeps the score.</p></div>
-    <div class="feature"><h3>Works offline</h3><p>No account and no internet required. Everything stays on your device.</p></div>
-    <div class="feature"><h3>No tracking</h3><p>No ads, no analytics, no data collection. Your matches are yours.</p></div>
+    <div class="feature">
+      <h3>Fast scoring</h3>
+      <p>Two large tap zones, instant undo, and a scoreboard you can read from across the court.</p>
+    </div>
+    <div class="feature">
+      <h3>Apple Watch</h3>
+      <p>Score from your wrist, or use the Watch as a remote while your phone keeps the official score. Both stay in sync.</p>
+    </div>
+    <div class="feature">
+      <h3>Works offline</h3>
+      <p>No account and no internet required. Everything runs and stays on your device.</p>
+    </div>
+    <div class="feature">
+      <h3>Private by default</h3>
+      <p>No ads, no analytics, no data collection. Your matches never leave your phone.</p>
+    </div>
   </section>
 
   <footer class="site">
